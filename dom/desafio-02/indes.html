@@ -2,5 +2,19 @@
 
 <div id="desafio">
 
+    <div>
+        <button v-on:click="exibirAlerta">Exibir Alerta</button>
+    </div>
+
+    <div>
+        <input type="text" v-on:keyup="valor = $event.target.value">
+        <p>{{ valor }}</p>
+    </div>
+
+    <div>
+        <input type="text" v-on:keydown.enter="valor = $event.target.value">
+        <p>{{ valor }}</p>
+    </div>
+
 </div>
 <script src="app.js"></script>
