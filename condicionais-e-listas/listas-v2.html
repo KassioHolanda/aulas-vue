@@ -3,7 +3,7 @@
 
 <div id="app">
 <ul>
-    <li v-for='cor in cores'>{{ cor }}</li>
+    <li v-for='(cor, index) in cores'>{{ cor }} - {{ index+1 }}</li>
 </ul>
 </div>
 
