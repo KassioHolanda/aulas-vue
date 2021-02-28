@@ -1,6 +1,9 @@
 new Vue({
     el: '#app',
-    data: {},
+    data: {
+        playerLife: 100,
+        monsterLife: 100
+    },
     computed: {},
     methods: {},
     watch: {}
