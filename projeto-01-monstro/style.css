@@ -66,3 +66,40 @@ display: flex;
 .result .lose {
     color: red;
 }
+
+/* area dos botoes */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: 5px 10px;
+    margin: 0px 10px;
+    border-radius: 5px;
+    border-color: transparent;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.new-game {
+    background-color: blue;
+    color: white;
+}
+.attack {
+    background-color: red;
+    color: white;
+}
+.special-attack {
+    background-color: orange;
+    color: white;
+}
+.heal {
+    background-color: green;
+    color: white;
+}
+.give-up {
+    background-color: gray;
+    color: black;
+}
