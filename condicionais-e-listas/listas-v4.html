@@ -16,11 +16,15 @@
     <ul>
         <li v-for='pessoa in pessoas'>
             <!-- {{ pessoa.nome }} -->
-            <span v-for='(valor, chave, index) in pessoa'>
+            <div v-for='(valor, chave, index) in pessoa'>
                 {{chave}} = {{ valor }} = {{index+1}}
-            </span>
+            </div>
         </li>
     </ul>
+    <hr>
+    <div v-for='n in 10'>
+        {{n}}
+    </div>
 </div>
 
 <script>
