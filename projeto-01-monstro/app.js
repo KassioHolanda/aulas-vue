@@ -3,7 +3,8 @@ new Vue({
     data: {
         running: false,
         playerLife: 100,
-        monsterLife: 100
+        monsterLife: 100,
+        logs: []
     },
     computed: {
         hasResult() {
@@ -11,6 +12,10 @@ new Vue({
         }
     },
     methods: {
+        registerLog(text, cls) {
+            // coloca o item no inicio do array
+            this.logs.unshift({ text, cls })
+        },
         startGame() {
             this.running = true;
             this.playerLife = 100;
@@ -18,14 +23,15 @@ new Vue({
         },
 
         attack(special) {
-            this.hurt('playerLife', 7, 12, false)
-            this.hurt('monsterLife', 5, 10, special)
+            this.hurt('playerLife', 5, 10, false, 'Monstro', 'Jogador', 'monster')
+            if (this.monsterLife > 0) this.hurt('monsterLife', 7, 12, special, 'Jogador', 'Monstro', 'player')
         },
 
-        hurt(nameLife, min, max, special) {
+        hurt(nameLife, min, max, special, source, target, cls) {
             const plus = special ? 5 : 0
             const hurt = this.getRadom(min + plus, max + plus)
             this[nameLife] = Math.max(this[nameLife] - hurt, 0)
+            this.registerLog("${source} atingiu ${target} com ${hurt}", cls)
         },
 
         getRadom(min, max) {
